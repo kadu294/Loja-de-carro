@@ -1,0 +1,60 @@
+{{define "Edit"}}
+{{template "_head"}}
+{{template "_menu"}}
+<body>
+    <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-5">Editando carro</h1>
+                    <p class="lead">Insira as alterações</p>
+                </div>
+            </div>
+            <form method="POST" action="update">
+                <input type="hidden" name="id" value="{{.Id}}">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="modelo">Modelo:</label>
+                            <input type="text" name="modelo" class="form-control" value="{{.Modelo}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="ano">Ano:</label>
+                            <input type="number" name="ano" class="form-control" value="{{.Ano}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="marca">Marca:</label>
+                            <input type="text" name="marca" class="form-control" value="{{.Marca}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="descricao">Descrição:</label>
+                            <input type="text" name="descricao" class="form-control" value="{{.Descricao}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="preco">Preço</label>
+                            <input type="number" name="preco" class="form-control" step="0.01" value="{{.Preco}}">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" value="salvar" class="btn btn-success">Alualizar</button>
+                <a class="btn btn-info" href="/">Voltar</a>
+            </form>
+    </div>
+</body>
+</html>
+{{end}}
